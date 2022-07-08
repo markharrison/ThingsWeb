@@ -21,4 +21,4 @@ Environment variables / configuration
 | MapStartLong | Center of initial map displayed - longitude |  
 | MapStartLat  | Center of initial map displayed - latitude  |  
 | MapStartZoom | Zoom level of initial map displayed |  
-|
+
