@@ -12,7 +12,6 @@ using Microsoft.Extensions.Hosting;
 
 namespace ThingsWeb
 {
-
     public class Startup
     {
         public Startup(IConfiguration configuration)
