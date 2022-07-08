@@ -1,0 +1,108 @@
+﻿html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 40px;
+    overflow-x: hidden;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #343a40;
+    font-size: 0.8em;
+    z-index: 0;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 46px;
+    line-height: 40px;
+    background-color: #343a40;
+    font-size: 0.8em;
+    z-index: 0;
+}
+
+body > .container-fluid {
+    padding: 60px 15px 0;
+}
+
+.preload * {
+    transition: none !important;
+}
+
+h1 {
+    font-size: 2.0em !important;
+}
+
+.fade {
+    transition: opacity 0.10s linear !important;
+}
+
+a.namelink:link {
+    color: black !important;
+}
+
+a.namelink:hover {
+    color: red !important;
+}
+
+.modal-body {
+    padding-left: 2em !important;
+    word-wrap: break-word;
+}
+
+#idmaincontent {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    top: 46px;
+    z-index: 0;
+}
+
+#idStatus {
+    color: #c1c1c1;
+}
+
+#idSiteTitle {
+    position: fixed;
+    left: 60px;
+    top: 2px;
+    height: 40px;
+    z-index: 4;
+    background-color: transparent;
+    color: #fff;
+    user-select: none;
+}
+
+#idToaster {
+    background: transparent;
+    position: fixed;
+    bottom: 45px;
+    right: 5px;
+    z-index: 2000;
+    width: 300px;
+}
+
+#idnavsidebarcontent {
+    padding:5px;
+}
+
+#idnavsidebarcontent > p {
+    color: white;
+}
+
+#idnavsidebarcontent > a {
+    color: white;
+}
+
+#idnavsidebarcontent > a:hover {
+    color: red;
+}

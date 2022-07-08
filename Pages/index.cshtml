@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@using ThingsWeb;
+@using Microsoft.Extensions.Options;
+
+@{
+    ViewData["Title"] = "Things";
+}
+
+<div id="myMap" style="position:relative;width:100%;min-width:350px;height:calc(100% - 0px);"></div>
+
+@section scripts {
+
+    <script>
+        $(document).ready(function () {
+            doIndexReady();
+        });
+    </script>
+}

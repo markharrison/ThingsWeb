@@ -1,0 +1,28 @@
+﻿@page
+@model ConfigJSModel
+@using Microsoft.Extensions.Options;
+@*@inject IOptions<Config> OptionsConfig;*@
+@inject AppConfig OptionsConfig;
+@{
+    Layout = null;
+    Response.ContentType = "application/javascript";
+}
+
+function getThingsAPIURL() {
+return "@OptionsConfig.ThingsAPIUrl";
+}
+function getSK() {
+return "@OptionsConfig.MapSKey";
+}
+function getMapSource() {
+return "@OptionsConfig.MapSource";
+}
+function getMapStartLong() {
+return @OptionsConfig.MapStartLong;
+}
+function getMapStartLat() {
+return @OptionsConfig.MapStartLat;
+}
+function getMapStartZoom() {
+return @OptionsConfig.MapStartZoom;
+}

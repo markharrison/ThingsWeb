@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Things Web</title>
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha384-VzLXTJGPSyTLX6d96AxgkKvE/LRb7ECGyTxuwtpjHnVWVZs2gp5RDjeM/tgBnVdM=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/css/site.min.css?rel=5bf6162381" />
+</head>
+<body class="preload">
+    <div id="idToaster"></div>
+    <div id="idThingModal" class="modal fade" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="idButtonDelete" data-thingid="">Delete</button>
+                    <button type="button" class="btn btn-success" id="idButtonReset" data-thingid="">Reset</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row ">
+            </div>
+        </div>
+    </header>
+    <div id="idnavbutton" class="hamburger hamburger--arrow" onclick="toggleNav();">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </div>
+    <div id="idSiteTitle">
+        <h1>Things</h1>
+    </div>
+    <div id="idmaincontent">
+        @RenderBody()
+    </div>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col text-left" id="idStatus">
+                    <span id="idTimerStatus"></span>&nbsp;&nbsp;
+                    <span id="idSignalRStatus"></span>&nbsp;&nbsp;
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div id="idnavsidebar" class="sidenav">
+        <br />
+        <div id="idnavsidebarcontent">
+            <p>
+                Powered&nbsp;by&nbsp;Azure&nbsp;
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 155" height="45" width="45" style=" fill: #ffffff">
+                    <path d="M0 138h45.875v.125L110.25 0 50.875 49.875zM116.875 11l-25.25 69.5 48.5 57.875L45.625 155H200z"></path>
+                </svg>
+            </p>
+            <p>Provided "as is" with no warranties, and confer no rights.</p>
+            <p>Mark Harrison</p>
+            <br /><br /><br />
+            <a href="#" id="idSignalR">SignalR Ping</a>
+        </div>
+
+    </div>
+
+    <div id="idnavoverlay" onclick="toggleNav();"></div>
+
+    <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"
+            integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha384-RFZC58YeKApoNsIbBxf4z6JJXmh+geBSgkCQXFyh+4tiFSJmJBt+2FbjxW7Ar16M" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet-bing-layer@3.3.1/leaflet-bing-layer.min.js"
+            integrity="sha384-oBpUvmruvJ6+8KiuqLdqy6CGd57pEaQSMLFyV00qIbjBaRb7XXupCEksa2TuiXNn" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/overlapping-marker-spiderfier-leaflet@0.2.7/dist/oms.js"     
+            integrity="sha384-gvOAcl7e1ypaQj0rUfIU0anMZMjeOyjuv1gAcB2ZLwP9UH0OmDpjHqkCHXnh6krp" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@@aspnet/signalr@1.1.4/dist/browser/signalr.min.js"
+            integrity="sha384-Axhj+JNYNvvWSxKp/kl1CVoQQYJ/o9HMCvjcqRJZtbdNtBJe35fDAvAS9c48rx3i" crossorigin="anonymous"></script>
+    <script src="configJS"></script>
+    <script src="/js/site.min.js?rel=41b860859d"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
