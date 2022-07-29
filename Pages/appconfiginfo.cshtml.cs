@@ -12,36 +12,39 @@ namespace ThingsWeb.Pages
     {
         IConfiguration _config;
         AppConfig _appconfig;
-        public string strAppConfigInfoHtml;
+        public string strHtml;
 
         public AppConfigInfoModel(IConfiguration config, AppConfig appconfig)
         {
             _config = config;
             _appconfig = appconfig;
-            strAppConfigInfoHtml = "";
+            strHtml = "";
         }
 
         public void OnGet()
         {
-            string pw = HttpContext.Request.Query["pw"].ToString();
-            if (string.IsNullOrEmpty(pw) || pw != _appconfig.AdminPW)
-                return;
+            string EchoData(string key, string value)
+            {
+                return key + ": <span style='color: blue'>" + value + "</span><br/>";
+            }
 
-            strAppConfigInfoHtml += "OS Description: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "<br/>";
-            strAppConfigInfoHtml += "ASPNETCORE_ENVIRONMENT: " + _config.GetValue<string>("ASPNETCORE_ENVIRONMENT") + "<br/>";
-            strAppConfigInfoHtml += "Instrumentation Key: " + _config.GetValue<string>("ApplicationInsights:InstrumentationKey") + "<br/>";
-            strAppConfigInfoHtml += "Build Identifier: " + _config.GetValue<string>("BuildIdentifier") + "<br/>";
+            strHtml += EchoData("OS Description", System.Runtime.InteropServices.RuntimeInformation.OSDescription);
+            strHtml += EchoData("Framework Description", System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
+            strHtml += EchoData("BuildIdentifier", _config.GetValue<string>("BuildIdentifier"));
 
-            strAppConfigInfoHtml += "MapSKeyAzure: " + _appconfig.MapSKeyAzure + "<br/>";
-            strAppConfigInfoHtml += "MapSKeyBing: " + _appconfig.MapSKeyBing + "<br/>";
-            strAppConfigInfoHtml += "MapSKey: " + _appconfig.MapSKey + "<br/>";
-            strAppConfigInfoHtml += "MapSource: " + _appconfig.MapSource + "<br/>";
-            strAppConfigInfoHtml += "MapStartLong: " + _appconfig.MapStartLong + "<br/>";
-            strAppConfigInfoHtml += "MapStartLat: " + _appconfig.MapStartLat + "<br/>";
-            strAppConfigInfoHtml += "MapStartZoom: " + _appconfig.MapStartZoom + "<br/>";
+            if (_appconfig.AdminPW == HttpContext.Request.Query["pw"].ToString())
+            {
+                strHtml += "ASPNETCORE_ENVIRONMENT: " + _config.GetValue<string>("ASPNETCORE_ENVIRONMENT") + "<br/>";
+                strHtml += "ApplicationInsights ConnectionString: " + _config.GetValue<string>("ApplicationInsights:ConnectionString") + "<br/>";
+                strHtml += "MapSKeyAzure: " + _appconfig.MapSKeyAzure + "<br/>";
+                strHtml += "MapSKeyBing: " + _appconfig.MapSKeyBing + "<br/>";
+                strHtml += "MapSKey: " + _appconfig.MapSKey + "<br/>";
+                strHtml += "MapSource: " + _appconfig.MapSource + "<br/>";
+                strHtml += "MapStartLong: " + _appconfig.MapStartLong + "<br/>";
+                strHtml += "MapStartLat: " + _appconfig.MapStartLat + "<br/>";
+                strHtml += "MapStartZoom: " + _appconfig.MapStartZoom + "<br/>";
+            }
 
-            //strAppConfigInfoHtml += "Feed Url: " + _appconfig.FeedUrl + "<br/>";
-            //strAppConfigInfoHtml += "Google Id: " + _appconfig.GoogleId + "<br/>";
         }
     }
 }
