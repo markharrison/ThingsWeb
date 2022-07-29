@@ -34,15 +34,15 @@ namespace ThingsWeb.Pages
 
             if (_appconfig.AdminPW == HttpContext.Request.Query["pw"].ToString())
             {
-                strHtml += "ASPNETCORE_ENVIRONMENT: " + _config.GetValue<string>("ASPNETCORE_ENVIRONMENT") + "<br/>";
-                strHtml += "ApplicationInsights ConnectionString: " + _config.GetValue<string>("ApplicationInsights:ConnectionString") + "<br/>";
-                strHtml += "MapSKeyAzure: " + _appconfig.MapSKeyAzure + "<br/>";
-                strHtml += "MapSKeyBing: " + _appconfig.MapSKeyBing + "<br/>";
-                strHtml += "MapSKey: " + _appconfig.MapSKey + "<br/>";
-                strHtml += "MapSource: " + _appconfig.MapSource + "<br/>";
-                strHtml += "MapStartLong: " + _appconfig.MapStartLong + "<br/>";
-                strHtml += "MapStartLat: " + _appconfig.MapStartLat + "<br/>";
-                strHtml += "MapStartZoom: " + _appconfig.MapStartZoom + "<br/>";
+                strHtml += EchoData("ASPNETCORE_ENVIRONMENT", _config.GetValue<string>("ASPNETCORE_ENVIRONMENT"));
+                strHtml += EchoData("APPLICATIONINSIGHTS_CONNECTION_STRING", _config.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING"));
+                strHtml += EchoData("MapSKeyAzure", _appconfig.MapSKeyAzure);
+                strHtml += EchoData("MapSKeyBing", _appconfig.MapSKeyBing);
+                strHtml += EchoData("MapSKey", _appconfig.MapSKey);
+                strHtml += EchoData("MapSource", _appconfig.MapSource);
+                strHtml += EchoData("MapStartLong", _appconfig.MapStartLong.ToString());
+                strHtml += EchoData("MapStartLat", _appconfig.MapStartLat.ToString());
+                strHtml += EchoData("MapStartZoom", _appconfig.MapStartZoom.ToString());
             }
 
         }
