@@ -22,3 +22,6 @@ Environment variables / configuration
 | MapStartLat  | Center of initial map displayed - latitude  |  
 | MapStartZoom | Zoom level of initial map displayed |  
 
+## Package 
+
+<https://github.com/markharrison/ThingsWeb/pkgs/container/thingsweb>
