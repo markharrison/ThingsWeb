@@ -36,6 +36,7 @@ namespace ThingsWeb.Pages
             {
                 strHtml += EchoData("ASPNETCORE_ENVIRONMENT", _config.GetValue<string>("ASPNETCORE_ENVIRONMENT"));
                 strHtml += EchoData("APPLICATIONINSIGHTS_CONNECTION_STRING", _config.GetValue<string>("APPLICATIONINSIGHTS_CONNECTION_STRING"));
+                strHtml += EchoData("ThingsAPIUrl", _appconfig.ThingsAPIUrl);
                 strHtml += EchoData("MapSKeyAzure", _appconfig.MapSKeyAzure);
                 strHtml += EchoData("MapSKeyBing", _appconfig.MapSKeyBing);
                 strHtml += EchoData("MapSKey", _appconfig.MapSKey);
