@@ -22,6 +22,11 @@ Environment variables / configuration
 | MapStartLat  | Center of initial map displayed - latitude  |  
 | MapStartZoom | Zoom level of initial map displayed |  
 
+## Infrastructure as Code
+
+<https://github.com/markharrison/ThingsWeb/blob/main/infra/README.md>
+
+
 ## Package 
 
 <https://github.com/markharrison/ThingsWeb/pkgs/container/thingsweb>
