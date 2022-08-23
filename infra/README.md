@@ -29,14 +29,14 @@ az webapp create -g $RG -p $PLANNAME -n $APPNAME --runtime DOTNETCORE:6.0
 az webapp stop -g $RG -n $APPNAME
 
 az webapp config appsettings set -g $RG -n $APPNAME --settings \
- ThingsAPIUrl="https://markthingsapi.azurewebsites.net"
- AdminPW="????????"  
- MapSKey="????"
- MapSKeyAzure="????"
- MapSKeyBing="????"
- MapSource="Bing"
- MapStartLat="52.5"
- MapStartLong="-1.0"
+ ThingsAPIUrl="https://markthingsapi.azurewebsites.net" \
+ AdminPW="????????" \
+ MapSKey="????" \
+ MapSKeyAzure="????" \
+ MapSKeyBing="????" \
+ MapSource="Bing" \
+ MapStartLat="52.5" \
+ MapStartLong="-1.0" \
  MapStartZoom="7.0"
 
 
