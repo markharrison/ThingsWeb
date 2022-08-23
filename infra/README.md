@@ -8,12 +8,12 @@ LOCATION="uksouth"
 PLANNAME="appserviceplan"
 APPNAME="thingz"
 
-## create a RG - if needed
+# create a RG - if needed
 
 az group create -g $RG -l $LOCATION  -o table 
 
 
-## create a AppService Plan - if needed
+# create a AppService Plan - if needed
 
 az appservice plan create -g $RG  \
   --name $PLANNAME \
