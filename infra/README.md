@@ -9,6 +9,7 @@ RG="thingz-rg"
 LOCATION="uksouth"
 PLANNAME="appserviceplan"
 APPNAME="thingz"
+THINGSAPIURL="https://??????.azurewebsites.net"
 
 ```
 
@@ -38,7 +39,7 @@ az webapp create -g $RG -p $PLANNAME -n $APPNAME --runtime DOTNETCORE:6.0
 az webapp stop -g $RG -n $APPNAME
 
 az webapp config appsettings set -g $RG -n $APPNAME --settings \
- ThingsAPIUrl="https://markthingsapi.azurewebsites.net" \
+ ThingsAPIUrl=$THINGSAPIURL \
  AdminPW="????????" \
  MapSKey="????" \
  MapSKeyAzure="????" \
