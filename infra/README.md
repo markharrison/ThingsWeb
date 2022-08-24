@@ -2,28 +2,37 @@
 
 ## Infrastructure as Code using Azure CLI 
 
+### Initialise variables
+
 ```
 RG="thingz-rg"
 LOCATION="uksouth"
 PLANNAME="appserviceplan"
 APPNAME="thingz"
 
-# create a RG - if needed
+```
 
+### Create a RG - if needed
+
+```
 az group create -g $RG -l $LOCATION  -o table 
 
+```
 
-# create a AppService Plan - if needed
+### Create a AppService Plan - if needed
 
+```
 az appservice plan create -g $RG  \
   --name $PLANNAME \
   --is-linux \
   --number-of-workers 1 \
   --sku B1
-   
 
-# create a WebApp and configure
+```   
 
+### Create AppService and configure
+
+```
 az webapp create -g $RG -p $PLANNAME -n $APPNAME --runtime DOTNETCORE:6.0
 
 az webapp stop -g $RG -n $APPNAME
