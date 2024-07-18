@@ -19,20 +19,20 @@ namespace ThingsWeb
         private string _AdminPWVal;
         public AppConfig(IConfiguration _config)
         {
-            _ThingsAPIUrl = _config.GetValue<string>("ThingsAPIUrl");
+            _ThingsAPIUrl = _config.GetValue<string>("ThingsAPIUrl") ?? "";
             if (!_ThingsAPIUrl.EndsWith("/"))
             {
                 _ThingsAPIUrl += "/";
             }
 
-            _MapSKey = _config.GetValue<string>("MapSKey");
-            _MapSKeyBing = _config.GetValue<string>("MapSKeyBing");
-            _MapSKeyAzure = _config.GetValue<string>("MapSKeyAzure");
-            _MapSource = _config.GetValue<string>("MapSource");
+            _MapSKey = _config.GetValue<string>("MapSKey") ?? "";
+            _MapSKeyBing = _config.GetValue<string>("MapSKeyBing") ?? "";
+            _MapSKeyAzure = _config.GetValue<string>("MapSKeyAzure") ?? "";
+            _MapSource = _config.GetValue<string>("MapSource") ?? "";
             _MapStartLong = _config.GetValue<double>("MapStartLong");
             _MapStartLat = _config.GetValue<double>("MapStartLat");
             _MapStartZoom = _config.GetValue<double>("MapStartZoom");
-            _AdminPWVal = _config.GetValue<string>("AdminPW");
+            _AdminPWVal = _config.GetValue<string>("AdminPW") ?? "";
         }
 
         public string ThingsAPIUrl

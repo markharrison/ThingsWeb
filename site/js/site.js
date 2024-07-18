@@ -296,8 +296,8 @@ function doIndexAlert(vTitle, vText) {
     var vTime = vDate.toLocaleTimeString();
 
     vHtml = vHtml + "<div id='" + vId + "' class='toast fade hide'><div class='toast-header'>";
-    vHtml = vHtml + "<strong class='mr-auto'>" + vTitle + "</strong><small class='text-muted'>" + vTime + "</small>";
-    vHtml = vHtml + "<button type='button' class='ml-2 mb-1 close' data-dismiss='toast' ><span>&times;</span></button>";
+    vHtml = vHtml + "<strong class='mr-auto'>" + vTitle + "</strong><small class='text-muted'>&nbsp;" + vTime + "</small>";
+    vHtml = vHtml + "<button type='button' class='btn-close ms-auto mb-1' data-bs-dismiss='toast' ></button>";
     vHtml = vHtml + "</div><div class='toast-body'>" + vText + "</div></div>";
 
     $("#idToaster").append(vHtml);
