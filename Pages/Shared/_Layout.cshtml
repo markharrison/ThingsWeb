@@ -1,3 +1,5 @@
+@using Microsoft.AspNetCore.Http.Extensions
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,6 +74,14 @@
             &nbsp;<span style="color:white">&bull;</span>&nbsp;<a href="https://markharrison.io" target="_blank">Mark Harrison</a>
             <br /><br />
             &nbsp;<span style="color:white">&bull;</span>&nbsp;<a href="https://github.com/markharrison/ThingsWeb" target="_blank">GitHub</a>
+            <br /><br />
+            @{
+                // Get the current URL from the HttpContext available in Razor pages
+                var currentUrl = Context.Request.GetDisplayUrl();
+                // Replace "web" with "rep" in the URL, case-insensitively
+                var newUrl = System.Text.RegularExpressions.Regex.Replace(currentUrl, "web", "rep", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+            }
+            &nbsp;<span style="color:white">&bull;</span>&nbsp;<a href="@newUrl" target="_blank">Report It</a>
             <br /><br />
             &nbsp;<span style="color:white">&bull;</span>&nbsp;<a href="#" id="idSignalR">SignalR Ping</a>
         </div>
