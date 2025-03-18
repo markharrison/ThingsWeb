@@ -30,3 +30,7 @@ Environment variables / configuration
 ## Package 
 
 <https://github.com/markharrison/ThingsWeb/pkgs/container/thingsweb>
+
+## History
+
+18 March 2025 - upgrade to .NET 9.0
